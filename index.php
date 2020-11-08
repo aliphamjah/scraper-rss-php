@@ -5,6 +5,7 @@ function rssSource($search)
     $rssSource = [
         'Detik' => 'http://rss.detik.com',
         'Tempo' => 'http://rss.tempo.co/nasional',
+        'Media Indonesia' => 'https://mediaindonesia.com/feed',
         'CNN Idonesia' => 'https://www.suara.com/rss/news',
         'Kumparan' => 'https://lapi.kumparan.com/v2.0/rss/',
     ];
@@ -23,7 +24,7 @@ function rssSource($search)
                                 'source' => $key,
                                 'title' => $data->title,
                                 'description' => preg_replace("/<img[^>]+\>/i", "", $data->description),
-                                'thumbnail' => $data->enclosure ? $data->enclosure['url'] : $data->img,
+                                'thumbnail' => $data->enclosure ? $data->enclosure['url'] : $data->image,
                                 'date' => $data->pubDate,
                                 'link' => $data->link
                             );
@@ -33,7 +34,7 @@ function rssSource($search)
                             'source' => $key,
                             'title' => $data->title,
                             'description' => preg_replace("/<img[^>]+\>/i", "", $data->description),
-                            'thumbnail' => $data->enclosure ? $data->enclosure['url'] : $data->img,
+                            'thumbnail' => $data->enclosure ? $data->enclosure['url'] : $data->image,
                             'date' => $data->pubDate,
                             'link' => $data->link
                         );
