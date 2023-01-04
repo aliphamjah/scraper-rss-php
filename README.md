@@ -1,1 +1,1 @@
-# php-rss-scraper
+# scraper-rss-php
